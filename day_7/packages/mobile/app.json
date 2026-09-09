@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "property-portal",
+    "slug": "property-portal",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["ios", "android"],
+    "assetBundlePatterns": ["**/*"]
+  }
+}

@@ -1,0 +1,21 @@
+-- database: ./dev.db
+
+Insert into roles (name) values('Super_Admin');
+
+UPDATE roles set name='User' where id=5;
+
+select id,name from roles order by name desc;
+
+select id,name from roles order by id limit 3;
+
+delete from roles where id in (7,8,9);
+
+SELECT * FROM users;
+
+select id,name,role_id from users;
+
+select users.id, users.name, roles.name as role
+from users left join roles
+on users.role_id = roles.id;
+
+

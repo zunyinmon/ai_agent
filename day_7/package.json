@@ -1,0 +1,28 @@
+{
+  "name": "property-portal",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "eslint \"packages/*/src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"packages/*/src/**/*.{ts,tsx}\" --fix",
+    "format": "prettier --write \"packages/*/src/**/*.{ts,tsx,json}\"",
+    "format:check": "prettier --check \"packages/*/src/**/*.{ts,tsx,json}\""
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "autoprefixer": "^10.5.5",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "postcss": "^8.5.28",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.5.4"
+  }
+}

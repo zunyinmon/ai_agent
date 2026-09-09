@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "lib": ["ESNext"],
+    "jsx": "react-native",
+    "rootDir": "src",
+    "outDir": "dist",
+    "allowJs": true
+  },
+  "include": ["src", "App.tsx"]
+}

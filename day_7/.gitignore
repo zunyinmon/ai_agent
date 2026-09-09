@@ -1,0 +1,18 @@
+node_modules/
+dist/
+
+# SQLite database
+packages/api/data/portal.db
+packages/api/data/*.db-shm
+packages/api/data/*.db-wal
+
+# Uploaded images
+packages/api/uploads/*
+!packages/api/uploads/.gitkeep
+
+# Environment files
+.env
+.env.local
+
+# OS
+.DS_Store
