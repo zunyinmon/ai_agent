@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container">
+        <a href="index.html" class="btn btn-success">Home</a>
+        <a href="about.html" class="btn btn-primary">About</a>
+        <a href="contact.html" class="btn btn-secondary">Contact</a>
+        <h3 class="text-center mb-4">Cars in cars.db</h3>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Make</th>
+                    <th scope="col">Color</th>
+                </tr>
+            </thead>
+            <tbody id="cars-list">
+                <tr>
+                    <td colspan="3">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        async function loadCars() {
+            const response = await fetch('/api/cars');
+            const cars = await response.json();
+            const carsList = document.querySelector('#cars-list');
+
+            carsList.innerHTML = cars.map((car) => `
+                <tr>
+                    <td>${car.id}</td>
+                    <td>${car.make}</td>
+                    <td>${car.color}</td>
+                </tr>
+            `).join('');
+        }
+
+        loadCars().catch(() => {
+            document.querySelector('#cars-list').innerHTML = `
+                <tr><td colspan="3">Could not load cars.</td></tr>
+            `;
+        });
+    </script>
+</body>
+</html>
